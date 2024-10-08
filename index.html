@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <h2>Contact us</h2>
+        <div class="form-wrapper">
+          <form method="GET" name="contact_form">
+            <div class="first_name">
+              <label for="first-name">First Name *</label>
+              <input type="text" id="first-name" required />
+            </div>
+            <div class="last_name">
+              <label for="last-name">Last Name *</label>
+              <input type="text" required id="last-name" />
+            </div>
+            <div class="email">
+              <label for="email-a">Email Address *</label>
+              <input type="email" required id="email-a" />
+            </div>
+            <fieldset>
+              <legend>Query Type *</legend>
+              <div>
+                <input
+                  type="radio"
+                  name="enquiry"
+                  value="general"
+                  id="general"
+                  required
+                />
+                <label for="general">General Enquiry</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="enquiry"
+                  value="support"
+                  id="support"
+                />
+                <label for="support">Support Request</label>
+              </div>
+            </fieldset>
+            <div class="message">
+              <label for="message">Message *</label>
+              <textarea name="message-request" id="message"></textarea>
+            </div>
+            <div class="consent">
+              <input
+                type="checkbox"
+                required
+                value="agree"
+                name="consent"
+                id="consent"
+              />
+              <label for="consent"
+                >I consent to being contacted by the team *</label
+              >
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

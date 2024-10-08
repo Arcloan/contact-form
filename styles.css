@@ -1,0 +1,158 @@
+:root {
+    --green-lighter: hsl(148, 38%, 91%);
+    --green-medium: hsl(169, 82%, 27%);
+    --red: hsl(0, 66%, 54%);
+
+    --white: hsl(0, 0%, 100%);
+    --grey-medium: hsl(186, 15%, 59%);
+    --grey-darker: hsl(187, 24%, 22%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100svh;
+    background-color: var(--green-lighter);
+    display: grid;
+    place-items: center;
+}
+
+main {
+    display: grid;
+    place-items: center;
+}
+
+h2 {
+    margin-block-end: 1.5rem;
+}
+
+.wrapper {
+    max-inline-size: 95%;
+    border-radius: 1rem;
+    background-color: white;
+    padding: 1rem;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+form label {
+    margin-block-end: 0.5rem;
+}
+
+label {
+    display: block;
+}
+
+form input:not([type="radio"]) {
+    width: 100%;
+    border-radius: 0.3rem;
+    height: 2rem;
+}
+
+.consent {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-block-start: 0.5rem;
+}
+
+.consent label {
+    margin: revert;
+}
+
+.consent.consent input{
+    width: revert;
+    border-radius: revert;
+    height: revert;
+}
+
+fieldset {
+    border: 0;
+}
+
+fieldset > * {
+    margin-block-start: 1rem;
+}
+
+fieldset legend {
+    margin-block-start: revert;
+}
+
+form div:has( input[type="radio"]) {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 0.3rem;
+
+    & label {
+        margin-block: revert;
+    }
+}
+
+textarea{
+    height: 6rem;
+    width: 100%;
+}
+
+button {
+    padding: 0.75rem;
+    border-radius: 0.3rem;
+    margin-block-start: 0.5rem;
+    background-color: var(--green-medium);
+    color: var(--white);
+}
+
+:is(fieldset div, input, button, textarea):hover {
+    cursor: pointer;
+}
+
+input {
+    accent-color: var(--green-medium);
+}
+
+input:active {
+    border-color: var(--green-medium);
+}
+
+textarea:active {
+    border-color: var(--green-medium);
+}
+
+fieldset div:has( input[type="radio"][checked]) {
+    background-color: var(--green-lighter);
+}
+
+
+@media (min-width : 600px) {
+    .wrapper {
+        inline-size: 600px;
+        padding: 1.5rem;
+    }
+
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .email, .message, button, .consent, fieldset {
+        grid-column: span 2;
+    }
+
+    fieldset {
+        display: grid;
+        grid-template-columns: subgrid;
+    }
+}
