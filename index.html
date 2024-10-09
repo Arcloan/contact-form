@@ -12,11 +12,19 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="main.js"></script>
 
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body>
     <main>
+      <div class="success hidden">
+        <div class="flex">
+          <img src="assets/images/icon-success-check.svg" alt="" />
+          <p>Message Sent!</p>
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
       <div class="wrapper">
         <h2>Contact us</h2>
         <div class="form-wrapper">
@@ -24,14 +32,17 @@
             <div class="first_name">
               <label for="first-name">First Name *</label>
               <input type="text" id="first-name" required />
+              <p class="error hidden">This field is required</p>
             </div>
             <div class="last_name">
               <label for="last-name">Last Name *</label>
               <input type="text" required id="last-name" />
+              <p class="error hidden">This field is required</p>
             </div>
             <div class="email">
               <label for="email-a">Email Address *</label>
               <input type="email" required id="email-a" />
+              <p class="error hidden">Please enter a vaild email address</p>
             </div>
             <fieldset>
               <legend>Query Type *</legend>
@@ -54,10 +65,17 @@
                 />
                 <label for="support">Support Request</label>
               </div>
+              <p class="error hidden">Please select a quey type</p>
             </fieldset>
             <div class="message">
               <label for="message">Message *</label>
-              <textarea name="message-request" id="message"></textarea>
+              <textarea
+                name="message-request"
+                id="message"
+                required
+                minlength="1"
+              ></textarea>
+              <p class="error hidden">This field is required</p>
             </div>
             <div class="consent">
               <input
@@ -70,6 +88,9 @@
               <label for="consent"
                 >I consent to being contacted by the team *</label
               >
+              <p class="error hidden">
+                To submit this form, please consent to being contacted
+              </p>
             </div>
             <button type="submit">Submit</button>
           </form>
